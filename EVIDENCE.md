@@ -1,10 +1,13 @@
 # Submission verification evidence
 
-## Final deployed release — verified October 30, 2026, 12:02 UTC
+## Final deployed release — verified October 30, 2026, 12:16 UTC
 
 - Public repository: **https://github.com/Nini0la/mica**, default branch `main`, GitHub-detected
-  **MIT License**. Public runtime revision **`a10ecc6f621c954219a6b1d743f7b6af66176bfc`**.
-- Runtime CI passed: https://github.com/Nini0la/mica/actions/runs/41051112753.
+  **MIT License**. Public runtime revision **`60bd9059234eb369f12bc15309982c704308d712`**.
+- Runtime CI passed: https://github.com/Nini0la/mica/actions/runs/41053817189.
+- The functional journeys below passed on backend-identical `a10ecc6`; `60bd905` additionally
+  exposes the captured provider in the existing inspector. Its 69 frontend tests, lint/type checks,
+  static build and a fresh-browser check of visible provider/model fields passed.
 - Live `/api/demo/status` reports that revision, `provider=nebius`,
   `model=nvidia/Nemotron-3.5-Super-VL`, `research_available=true`, active scheduler heartbeat,
   `external_messaging=false`, and availability through December 31.
