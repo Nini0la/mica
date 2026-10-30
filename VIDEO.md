@@ -3,6 +3,7 @@
 Record the real hosted judge site, not a local mock. Sign in before recording and prepare a
 second tab with the relevant Context Inspector. Use fictional details. The demo account has
 shared state, so choose a short unique task title such as “Video rehearsal 1”.
+Enable the saving checkbox for **each** commitment change and reminder; it resets after sending.
 
 ## 0:00–0:15 — The problem and product
 Show the demo URL, Mica companion and seeded goals.

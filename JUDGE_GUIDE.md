@@ -13,6 +13,9 @@ several seconds. Existing records may include earlier judge tests because this i
 
 ## A five-minute product test
 
+For **each** save, update or reminder message, enable the saving checkbox again; it resets after
+every send. Research itself works with saving unchecked.
+
 1. **Context:** ask “What are my current goals?” Look at Chat, Threads and Today. Alex is a
    fictional Lagos-based Python/FastAPI developer exploring junior AI engineering opportunities.
 2. **Save:** check **Allow saving or updating this idea, project, or commitment**. Send

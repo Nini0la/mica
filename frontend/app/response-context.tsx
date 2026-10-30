@@ -7,6 +7,7 @@ import "./response-context.css";
 
 type InputMessage = {role: string; content?: unknown; [key: string]: unknown};
 type ModelCall = {
+  provider?: string;
   index: number; phase: string; status: string; request_scope: string;
   request: {messages: InputMessage[]; tools?: unknown[]; [key: string]: unknown};
   sections: {message_index: number; kind: string}[];
@@ -80,6 +81,7 @@ function CallDetail({call, executions}: {call: ModelCall; executions: Execution[
   const settings = Object.fromEntries(Object.entries(call.request).filter(([key]) => !["messages", "tools"].includes(key)));
   return <div className="context-call">
     <dl className="context-metrics">
+      <div><dt>Provider</dt><dd>{call.provider ?? "Not recorded"}</dd></div>
       <div><dt>Model</dt><dd>{call.usage?.model ?? text(call.request.model ?? "Not reported")}</dd></div>
       <div><dt>Call status</dt><dd>{call.status}</dd></div>
       <div><dt>Input tokens</dt><dd>{call.usage?.input_tokens ?? `≈ ${call.approximate_input_tokens} (character estimate)`}</dd></div>

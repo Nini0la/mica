@@ -1,5 +1,33 @@
 # Submission verification evidence
 
+## Final deployed release — verified October 30, 2026, 12:02 UTC
+
+- Public repository: **https://github.com/Nini0la/mica**, default branch `main`, GitHub-detected
+  **MIT License**. Public runtime revision **`a10ecc6f621c954219a6b1d743f7b6af66176bfc`**.
+- Runtime CI passed: https://github.com/Nini0la/mica/actions/runs/41051112753.
+- Live `/api/demo/status` reports that revision, `provider=nebius`,
+  `model=nvidia/Nemotron-3.5-Super-VL`, `research_available=true`, active scheduler heartbeat,
+  `external_messaging=false`, and availability through December 31.
+- Final fresh-browser test created commitment `7f4b58b4-46fe-4656-893c-4203ea97190f`, amended it
+  to version 2, scheduled reminder plan `3c0e7c5e-b3ac-4882-b9b0-3017f0c10d2f`, closed the browser,
+  and verified successful action **`b89b6819-af65-4a7c-84be-3545743f94e6`** after a new login.
+  Due: **11:58:30.565776 UTC**; delivered: **11:58:58.661098 UTC**, within the 30-second sweep.
+- Final Tavily Search: **`835b67d3-a1f6-49fa-a2e1-c64d85469510`** (1 reported credit).
+  Extract: **`bb4458ab-4dae-4a30-8cba-83575eaa0f6f`** (successful, 0 reported credits on that call).
+  Source: `https://jobgether.com/remote-jobs/nigeria/ai-and-machine-learning`.
+  Saved source-bearing commitment: **`6cc0be17-cd69-4631-9a8b-945ce13583a5`**.
+- The research query used Nigeria, Python/FastAPI, junior roles and UTC+0–UTC+3 overlap from
+  the seeded goal, without inventing degree/pay requirements. The response labeled the sources
+  as unconfirmed leads and explicitly identified eligibility and current availability as unknown.
+  The successful tool-selection response used **1,402 output tokens**, confirming why the earlier
+  1,200-token ceiling was insufficient for this turn; it stayed within the new 2,400-token ceiling.
+- Live checks passed for unauthenticated-read denial, foreign-origin rejection, CSRF enforcement,
+  blocked external messaging operations, absent Telegram linkage and denied private-table access.
+
+The final demo uses clean synthetic database `mica_judge_submission`. Earlier engineering-test
+data and traces remain separately retained; no private-owner data was copied. Documentation-only
+commits may follow the pinned runtime without changing the deployed application code.
+
 ## Official timing
 
 The [official rules](https://nebiusglobalaihackathon.devpost.com/rules) were checked October 30,
