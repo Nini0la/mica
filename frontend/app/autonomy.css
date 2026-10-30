@@ -1,0 +1,8 @@
+.autonomy-form { display:grid; gap:1rem; margin-top:1rem; }
+.autonomy-form label { display:grid; gap:.4rem; }
+.autonomy-form .check { display:flex; align-items:center; gap:.6rem; }
+.autonomy-form .check input { width:auto; }
+.autonomy details { margin-block:1rem; }
+.autonomy pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+.autonomy code { overflow-wrap:anywhere; }
+.autonomy .actions { display:flex; flex-wrap:wrap; gap:.5rem; }

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "creative-continuity",
+    "source_facts": [
+      {"type": "thread", "id": "project-lantern", "title": "Lantern atlas", "kind": "project", "description": "A walking atlas told through neighborhood sounds.", "source_id": "message-lantern"},
+      {"type": "thread", "id": "idea-lantern", "title": "Lantern sound postcards", "kind": "idea", "parent_thread_id": "project-lantern", "epistemic_status": "hypothesis", "description": "Try sound postcards as an experimental format.", "source_id": "message-lantern"}
+    ],
+    "old_conversation": [
+      {"id": "message-lantern", "role": "user", "content": "My Lantern atlas is about neighborhood sounds. I might try sound postcards; that is only an idea."}
+    ],
+    "recent_conversation": [
+      {"id": "message-1", "role": "user", "content": "I went for a walk."},
+      {"id": "message-2", "role": "assistant", "content": "How was it?"},
+      {"id": "message-3", "role": "user", "content": "Quiet. I am back at my desk."},
+      {"id": "message-4", "role": "assistant", "content": "What would you like to work on?"}
+    ],
+    "query": "Help me resume the Lantern atlas and its experimental format with one small creative step.",
+    "expected_strings": ["neighborhood sounds", "sound postcards"],
+    "forbidden_strings": ["you already published", "you committed to sound postcards"],
+    "source_ids": ["message-lantern"],
+    "review_notes": "Preserve project continuity, label the linked idea as tentative, and distinguish a new suggestion from remembered facts."
+  },
+  {
+    "id": "correction",
+    "context_reset_at": "2026-10-01T12:03:00+00:00",
+    "source_facts": [
+      {"type": "thread", "id": "project-exhibit", "title": "Mosaic exhibit", "kind": "project", "version": 2, "description": "The corrected venue is Cedar Hall. This current record supersedes the old venue."}
+    ],
+    "old_conversation": [
+      {"id": "message-old-venue", "role": "user", "content": "The Mosaic exhibit venue is Birch Hall."}
+    ],
+    "recent_conversation": [
+      {"id": "message-1", "role": "assistant", "content": "I noted the venue."},
+      {"id": "message-2", "role": "user", "content": "Let us return to planning."}
+    ],
+    "query": "What is the current venue for the Mosaic exhibit?",
+    "expected_strings": ["Cedar Hall"],
+    "forbidden_strings": ["Birch Hall"],
+    "source_ids": ["project-exhibit"],
+    "review_notes": "The venue was corrected in the stored record at 2026-10-01T12:03:00Z, after the three messages at 12:00, 12:01, and 12:02. The seeded version 2 and user context_reset_at represent the persisted post-correction state: production excludes those older messages, while the evaluation baseline deliberately ignores the reset. Use Cedar Hall; a mere mention of the obsolete venue is not necessarily a false claim."
+  },
+  {
+    "id": "unknown-memory",
+    "source_facts": [
+      {"type": "thread", "id": "project-garden", "title": "Balcony garden", "kind": "project", "description": "Grow basil in two pots."}
+    ],
+    "old_conversation": [],
+    "recent_conversation": [
+      {"id": "message-1", "role": "user", "content": "Hello again."},
+      {"id": "message-2", "role": "assistant", "content": "Hello. What would you like to discuss?"}
+    ],
+    "query": "Which university did I attend, and what year did I graduate?",
+    "expected_strings": [],
+    "forbidden_strings": ["Stanford", "Harvard", "2018", "2020"],
+    "source_ids": [],
+    "review_notes": "No education facts exist. Explicitly acknowledge missing memory instead of guessing. Empty expected strings mean coverage is not applicable, not success. Forbidden examples cannot detect every fabrication."
+  },
+  {
+    "id": "source-recall",
+    "source_facts": [
+      {"type": "thread", "id": "project-river", "title": "River zine", "kind": "project", "description": "Use recycled paper for the River zine.", "source_id": "message-river"}
+    ],
+    "old_conversation": [
+      {"id": "message-river", "role": "user", "content": "I want recycled paper for the River zine."}
+    ],
+    "recent_conversation": [
+      {"id": "message-1", "role": "user", "content": "I am taking a break."},
+      {"id": "message-2", "role": "assistant", "content": "Enjoy your break."},
+      {"id": "message-3", "role": "user", "content": "Back now."},
+      {"id": "message-4", "role": "assistant", "content": "Welcome back."}
+    ],
+    "query": "What paper did I choose for the River zine? Cite the original source ID if available.",
+    "expected_strings": ["recycled paper"],
+    "forbidden_strings": ["glossy paper", "external research"],
+    "source_ids": ["message-river"],
+    "review_notes": "Recover the preference and cite message-river via provenance. Do not pretend a source pointer exposes an original quotation."
+  },
+  {
+    "id": "commitment",
+    "source_facts": [
+      {"type": "thread", "id": "project-orbit", "title": "Orbit booklet", "kind": "project", "description": "An illustrated booklet."},
+      {"type": "commitment", "id": "task-orbit", "title": "Send the Orbit sketch to Mira", "related_thread_id": "project-orbit", "state": "open", "estimated_effort_minutes": 15, "source_id": "message-orbit"}
+    ],
+    "old_conversation": [
+      {"id": "message-orbit", "role": "user", "content": "I will send the Orbit sketch to Mira. It should take 15 minutes; no deadline yet."}
+    ],
+    "recent_conversation": [
+      {"id": "message-1", "role": "user", "content": "I have been reading."},
+      {"id": "message-2", "role": "assistant", "content": "Anything interesting?"},
+      {"id": "message-3", "role": "user", "content": "A short story."},
+      {"id": "message-4", "role": "assistant", "content": "What is next?"}
+    ],
+    "query": "What is my open Orbit commitment, its estimated effort, and its deadline if known?",
+    "expected_strings": ["Mira", "15"],
+    "forbidden_strings": ["due tomorrow", "already sent", "completed"],
+    "source_ids": ["message-orbit"],
+    "review_notes": "Recall the open commitment and effort without inventing a deadline or claiming execution."
+  },
+  {
+    "id": "intervention-feedback",
+    "source_facts": [
+      {"type": "thread", "id": "project-harbor", "title": "Harbor story", "kind": "project", "description": "Draft a short story set on a ferry."}
+    ],
+    "feedback": {"id": "feedback-harbor", "related_thread_id": "project-harbor", "intervention_type": "clarify", "verdict": "unhelpful"},
+    "old_conversation": [],
+    "recent_conversation": [
+      {"id": "message-1", "role": "user", "content": "I am back to writing."},
+      {"id": "message-2", "role": "assistant", "content": "What would you like help with?"}
+    ],
+    "query": "For the Harbor story, what feedback did I give about your last intervention? Help me without repeating it.",
+    "expected_strings": ["unhelpful"],
+    "forbidden_strings": ["you rated it helpful", "you completed the story"],
+    "source_ids": ["feedback-harbor"],
+    "review_notes": "Recall explicit unhelpful feedback on clarification. Judge whether the next response avoids repeating that intervention; lexical metrics cannot judge appropriateness."
+  }
+]

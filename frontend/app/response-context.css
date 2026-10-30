@@ -1,0 +1,56 @@
+.response-inspect-text {
+  display: block;
+  width: 100%;
+  padding: .35rem 0;
+  margin-bottom: .5rem;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-weight: 400;
+}
+.response-inspect-text:hover { background: #f3f6f9; color: #005bab; }
+.modal.response-inspector {
+  width: min(1040px, calc(100vw - 2rem));
+  max-width: 1040px;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.context-heading {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+  position: sticky; top: 0; z-index: 1; background: #fff; padding-bottom: .5rem;
+}
+.context-heading h2 { margin-bottom: .5rem; }
+.context-heading button { flex-shrink: 0; }
+.context-section { margin-block: 1.2rem; padding-top: 1rem; border-top: 1px solid #e5e3df; }
+.context-section h3, .context-section h4 { margin-bottom: .5rem; }
+.response-inspector summary { cursor: pointer; min-height: 44px; padding-block: .55rem; font-weight: 600; overflow-wrap: anywhere; }
+.context-json {
+  margin: .5rem 0 1rem;
+  padding: .85rem;
+  border: 1px solid #e5e3df;
+  border-radius: 8px;
+  background: #f7f8fa;
+  color: #242930;
+  font: .8rem/1.6 ui-monospace, SFMono-Regular, Consolas, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-height: 32rem;
+  overflow-y: auto;
+}
+.context-call-picker { display: flex; flex-wrap: wrap; gap: .5rem; margin-block: 1rem; }
+.context-call-picker button { white-space: normal; text-align: left; }
+.context-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; }
+.context-metrics div { padding: .65rem; background: #f5f4f2; border-radius: 8px; }
+.context-metrics dt { color: #615d59; font-size: .75rem; }
+.context-metrics dd { margin: .2rem 0 0; overflow-wrap: anywhere; font-size: .85rem; }
+.context-record { border-left: 3px solid #c7d9e9; padding-left: .75rem; margin-block: .75rem; }
+.context-empty { padding: 1rem; background: #f5f4f2; border-radius: 8px; }
+@media (max-width: 760px) {
+  .modal.response-inspector { width: calc(100vw - 1rem); max-height: calc(100dvh - 1rem); padding: 1rem; }
+  .context-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .context-json { padding: .6rem; font-size: .75rem; }
+}
