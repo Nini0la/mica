@@ -82,13 +82,44 @@ does not continuously reason or call the model to deliver a reminder.
 Azure remains an optional manually selected alternative in source configuration. The judge
 deployment contains no Azure credentials and does not silently fall back to Azure.
 
-## Hackathon-period work
+### Where Token Factory accelerated development
 
-This submission builds on an existing personal-AI prototype. Significant work during the
-August 26–October 30, 2026 eligibility period includes durable commitment/autonomy integration,
-restart and duplicate protection, Telegram delivery, semantic proposals/reminder continuations,
-Nebius/Nemotron integration and live validation, the isolated judge deployment, and Tavily
-research-to-action integration. See [EVIDENCE.md](EVIDENCE.md) for dated verification.
+**Token Factory let us use hosted NVIDIA Nemotron inference without provisioning GPUs,
+downloading model weights or operating an inference server.** Its OpenAI-compatible API fitted
+Mica's existing gateway and native-tool interface, so we could focus on persistent context,
+validated actions, research and reliable follow-through.
+
+Authenticated model discovery helped us select an available Nemotron variant; deprecation notices
+helped us avoid a model scheduled for retirement before judging. Returned model identity and token
+usage, together with pricing metadata, made real application runs inspectable and their inference
+costs estimable. We tested native tool execution through Mica, not just standalone API connectivity.
+
+Our Nebius usage is **Token Factory inference**. Modal hosts the web/API and scheduler, while
+Neon hosts PostgreSQL. We do not claim to have deployed GPU instances, Serverless Jobs or
+Serverless Endpoints on Nebius AI Cloud.
+
+## Development history and hackathon-period work
+
+**This repository is a clean submission snapshot of Mica, not the start of its development.**
+The original working repository was created for this same project on **September 30, 2026**;
+its earliest recorded specification and implementation commits are also dated September 30.
+This submission repository was created on **October 30, 2026** to present the application,
+tests and reproduction instructions without private operational artifacts or unrelated materials.
+
+Both repository dates fall within the hackathon's **August 26–October 30, 2026** submission
+period. The recorded progression includes:
+
+- **September 30–October 1:** persistent conversation/context, daily continuity, commitments,
+  vocabulary and the application interface.
+- **October 20–29:** contextual model assistance, companion refinements, durable autonomy,
+  Telegram delivery, conversational proposals and separate reminder plans.
+- **October 30:** NVIDIA Nemotron integration through Nebius Token Factory, real application
+  acceptance runs, isolated HTTPS judge deployment and Tavily research-to-action integration.
+
+See the [original development history](https://github.com/Nini0la/fpc-pet/commits/feat/functional-autonomy/),
+the [initial specification commit](https://github.com/Nini0la/fpc-pet/commit/dec838d), and
+[verification evidence](EVIDENCE.md). `SOURCE_SNAPSHOT.json` records the source revision and
+runtime-file hashes used for the submission snapshot.
 
 ## Current boundaries
 

@@ -77,12 +77,13 @@ and context-sensitive accountability. Runtime experiments such as Hermes are fut
 are not part of the submitted implementation.
 
 ## Significant work during the eligibility period
-Mica builds on an existing personal-assistant prototype. Significant updates during the August 26
-through October 30, 2026 submission period include durable autonomy and commitment lifecycle work,
-restart/duplicate protections, Telegram integration, durable conversational proposals and reminders,
-Nebius/Nemotron integration and live application validation, the isolated judge deployment, and
-Tavily-powered research-to-action functionality. We are not claiming the entire foundation was
-created from scratch during the hackathon.
+Mica's recorded development began in its original working repository on September 30, 2026,
+within the August 26–October 30 submission period. It was developed iteratively from conversation
+and persistent context through commitments, autonomous follow-through and Telegram connectivity.
+The final integration work added NVIDIA Nemotron through Nebius Token Factory, real application
+validation, the isolated judge deployment and Tavily-powered research-to-action functionality.
+The October 30 public repository is a clean submission snapshot of that same project, not the
+start of development. The README links the original development history and dated evidence.
 
 ## Nebius / NVIDIA feedback
 The OpenAI-compatible Token Factory endpoint made it practical to integrate an NVIDIA model into
