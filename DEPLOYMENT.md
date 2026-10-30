@@ -54,7 +54,7 @@ scale down after 60 seconds idle. No GPUs or stored model weights are used. An h
 function stops only the demo app after the configured demonstration end; mutation guards block
 new demo writes after the cutoff. Keep the code expiry and Secret cutoff aligned when changing it.
 
-Inference remains bounded at two calls/turn, 15 seconds/call and 1,200 output tokens/call.
+Inference remains bounded at two calls/turn, 15 seconds/call and 2,400 output tokens/call.
 Tavily uses basic Search (one credit) and at most one basic Extract (provider meters successful
 URL batches); reported usage is recorded, not assumed. Costs depend on actual judge usage.
 Keep provider accounts funded/credited through judging; no software deployment can guarantee

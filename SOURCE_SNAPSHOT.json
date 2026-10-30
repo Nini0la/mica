@@ -1,5 +1,5 @@
 {
-  "source_revision": "191f32d4624cb480aea6063b46f1ece33c605501",
+  "source_revision": "51949cb7fe199959e2738fba2a32a027983fe58f",
   "files": 169,
   "runtime_sha256": {
     "backend/app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -19,7 +19,7 @@
     "backend/app/effort.py": "a742b65f126c323d07c7eded8c64d1e0aaa31aa09d6a19cb2f694ca1df30ccd8",
     "backend/app/evaluate.py": "713a2b01ac6d8a0328cd7397fd73e46a1848926b9773c22bbc1ccb31402916f8",
     "backend/app/evaluate_personality.py": "8e571dfe5799a4238b6ee4292692db0bc757d1140938cb1d0a5082184ff1bb87",
-    "backend/app/gateway.py": "7936e0d5313e91633649a1cd38f102f4d9f7d9c3c9793d7c80e7bb6acf0f4a7f",
+    "backend/app/gateway.py": "bf1bd5894f7ec0a0d5f78106a535311321d98af4ee8f8c88f2e762f2bd3b4f80",
     "backend/app/history.py": "72e435990cc4a97aad06b232f8a87de91859ec5fa57933ba5fd991fe790752ae",
     "backend/app/judge_demo.py": "da1ea11b42cd6f8d6818b2d9f26d993c16ee1a86274d9f3aa4e6088a7a2acbbd",
     "backend/app/main.py": "5a63deefe1f65aa8c52dc12973c6d4a93187f8c769b89bf4756312ed516f53e2",

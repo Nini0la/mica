@@ -150,7 +150,7 @@ def _inline_tool_schema(schema: dict[str, Any]) -> dict[str, Any]:
 class OpenAICompatibleGateway:
     """Use a versioned base URL, e.g. https://example.com/v1.
 
-    MODEL_MAX_OUTPUT_TOKENS defaults to 600 (maximum 1200).
+    MODEL_MAX_OUTPUT_TOKENS defaults to 600 (maximum 1200; Nebius maximum 2400).
     MODEL_TIMEOUT_SECONDS defaults to 15 (maximum 15).
     Each complete call uses a killable worker to enforce a wall-clock deadline.
     PROVIDER supports openai_compatible, azure_openai and nebius. Prices are USD per million.
@@ -205,7 +205,7 @@ class OpenAICompatibleGateway:
                 or len(self.model) > 256
                 or any(ord(char) < 32 or ord(char) == 127 for char in self.model)
                 or type(self.max_output_tokens) is not int
-                or not 1 <= self.max_output_tokens <= 1200
+                or not 1 <= self.max_output_tokens <= (2400 if self.provider == "nebius" else 1200)
                 or isinstance(self.timeout_seconds, bool)
                 or not 0 < self.timeout_seconds <= 15
             ):

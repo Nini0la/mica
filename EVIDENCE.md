@@ -69,7 +69,10 @@ verification next step, not a claim of a guaranteed job match. Results may chang
   locked Modal requirements restored the deployed application; the private assistant was unaffected.
 - An initial research synthesis exceeded the small output budget. Research synthesis now uses
   the same NVIDIA model with reasoning disabled for the final evidence-only summary, within the
-  same 1,200-token cap; interpretation/tool selection retains low reasoning.
+  same NVIDIA provider; interpretation/tool selection retains low reasoning. Final clean-seed
+  testing also exposed insufficient room for some tool-selection responses at the earlier
+  1,200-token setting. The judge profile now has a bounded 2,400-token ceiling; the 15-second
+  per-call deadline, two-call limit and no-Azure-fallback rule remain unchanged.
 - A transcript review found mixed aggregator snippets caused a wrong salary attribution. Fresh
   research synthesis now receives only the authoritative goal and fresh evidence, not old research
   replies; extracted text supersedes search snippets. Findings are presented as source-page leads,
@@ -82,7 +85,7 @@ verification next step, not a claim of a guaranteed job match. Results may chang
 
 ## Regression checks
 
-Before final packaging: **603 backend tests passed**, Ruff and mypy passed (41 app modules).
+Before final packaging: **604 backend tests passed**, Ruff and mypy passed (41 app modules).
 **69 frontend tests passed**, along with ESLint, TypeScript checks, dependency audit and the
 static production build. Provider/permission/recovery unit tests use explicit fakes where noted;
 the browser/provider/research/worker results above use the deployed services.

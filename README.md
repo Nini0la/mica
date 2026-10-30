@@ -48,7 +48,7 @@ Requirements: Python 3.11+, `uv`, Node.js 20.9+ (24 recommended), npm and Postgr
 1. Copy `.env.example` to `.env` and configure a local PostgreSQL URL, access code and session
    secret. Set `MODEL_MODE=live`, `PROVIDER=nebius`, `NEBIUS_API_KEY`,
    `NEBIUS_MODEL=nvidia/Nemotron-3.5-Super-VL`, `NEBIUS_REASONING_EFFORT=low`, and
-   `MODEL_MAX_OUTPUT_TOKENS=1200`. Optionally set `TAVILY_API_KEY`.
+   `MODEL_MAX_OUTPUT_TOKENS=2400`. Optionally set `TAVILY_API_KEY`.
 2. In `backend/`, run `uv sync --extra dev`, then
    `uv run --env-file ../.env alembic upgrade head`.
 3. In `backend/`, start the API:

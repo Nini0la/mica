@@ -275,3 +275,10 @@ def test_cloud_refresh_keeps_window_and_exports_only_selected_provider(
 def test_missing_preflight_key_never_calls_provider(monkeypatch):
     monkeypatch.setattr("app.nebius_check.model_ids", lambda *a: pytest.fail("network called"))
     assert check({}) == {"status": "blocked", "reason": "NEBIUS_API_KEY is missing"}
+
+
+def test_nebius_larger_reasoning_budget_remains_bounded():
+    gateway = OpenAICompatibleGateway.from_env(ENV | {"MODEL_MAX_OUTPUT_TOKENS": "2400"})
+    assert gateway.request_payload([{"role": "user", "content": "test"}], [])["max_tokens"] == 2400
+    with pytest.raises(GatewayError, match="invalid_config"):
+        OpenAICompatibleGateway.from_env(ENV | {"MODEL_MAX_OUTPUT_TOKENS": "2401"})

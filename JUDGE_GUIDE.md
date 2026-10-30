@@ -45,7 +45,7 @@ seeded goals so other judges can reproduce the research scenario. No private inf
 - Check-ins are finite; they do not run indefinitely. Pause/cancel controls remain available.
 - Research is real and results vary. A page fetched by Tavily is evidence, not proof that every
   listing attribute is accurate or that you qualify. Mica should identify important unknowns.
-- Requests are bounded: up to two model/tool calls per turn, 1,200 output tokens per model call;
+- Requests are bounded: up to two model/tool calls per turn, 2,400 output tokens per model call;
   shared chat protection permits 20 turns/minute and research permits 60 requests/day. Ordinary
   judge testing is free. A temporary 429 response includes a retry interval.
 - `/api/demo/status` exposes nonsecret provider, revision, availability and worker-heartbeat status.
